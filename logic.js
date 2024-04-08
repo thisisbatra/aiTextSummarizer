@@ -1,11 +1,20 @@
-// // document.getElementById("inputArea").innerHTML = "Hello World!";?\
-// function click() {
-//     var BUTTON = document.getElementById("inputArea").value;
-//     document.getElementById("sudo").innerHTML = GFG;
-
-// }
+let stringVal=document.getElementById("inputArea");
+let lengthChecker=document.getElementById("lengthChecker");
+let submitBtn=document.getElementById("submitBtn");
+const inputLength=()=>{
+    let length=stringVal.value.length;
+    lengthChecker.innerHTML="char :"+(stringVal.maxLength-length);
+    if(length<200||length>10000){
+        submitBtn.disabled="true";
+        submitBtn.style.opacity="0.5";
+        submitBtn.style.cursor="not-allowed";
+    }
+    else{
+        submitBtn.disabled="false";
+        submitBtn.style.opacity="1";
+        submitBtn.style.cursor="pointer";
+    }
+}
 const onSubmit=()=>{
-    let stringVal=document.getElementById("inputArea").value;
-        // document.getElementById("outputArea").innerHTML=stringVal;
-        console.log(stringVal.length)
+        document.getElementById("outputArea").innerHTML=stringVal.value;
 }

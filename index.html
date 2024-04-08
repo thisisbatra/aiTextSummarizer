@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./beauty.css">
     <link rel="icon" href="./Assets/logo-removebg-preview.png">
     <!-- <link rel="" href="./logic.js"> -->
-    <script src="./logic.js"></script>
+    <script src="./logic.js" defer></script>
 </head>
 <body>
     <section class="mainContainer">
@@ -17,8 +17,11 @@
         <div class="container">
             <div class="inputContainer">
                 <textarea name="" id="inputArea" cols="30" rows="10" class="area"
-                placeholder="Write something to summarize it.The length should be not less than 200 and not greater than 10000 (200 < x < 10000)." value=""></textarea>
-                <input type="submit" value="Submit" class="submitBtn" onclick="onSubmit()">
+                maxlength="10000"
+                placeholder="Write something to summarize it.The length should be not less than 200 and not greater than 10000 (200 < x < 10000)."
+                oninput="inputLength()"></textarea>
+                <span class="lengthChecker" id="lengthChecker"></span>
+                <input type="submit" value="Submit" class="submitBtn" id="submitBtn" onclick="onSubmit()">
             </div>
             <div class="outputContainer">
                 <textarea name="" id="outputArea" cols="30" rows="10" class="area output"
